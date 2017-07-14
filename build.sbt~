@@ -1,4 +1,4 @@
-name := "collection-assignment"
+name := "case-class-n-pattern-matching"
 
 version := "1.0"
 
