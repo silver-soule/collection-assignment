@@ -83,7 +83,7 @@ Kunal 75 70 80 75 75%<br/>
 Himanshu 74 70 81 75 75%<br/>
 Geetika 70 70 85 75 75%<br/>
 </li>
-<ul>
+</ul>
 
 <i>Developer Notes:</i>
 
