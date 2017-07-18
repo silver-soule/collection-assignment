@@ -49,8 +49,8 @@ trait CollectionAssignment {
     val(male,female) = getScoreCardByGender
     val marksIntersect = male.map((x)=>x.percentage).intersect(female.map((x)=>x.percentage))
 
-    male.map((x)=>(RamDatabase.getStudentById(x.studentId).name,x)).filter((x)=> marksIntersect.contains(x._2.percentage))zip
-      female.map((x)=>(RamDatabase.getStudentById(x.studentId).name,x)).filter((x)=> marksIntersect.contains(x._2.percentage))
+    male.sortBy((scorecard)=>scorecard.percentage).map((x)=>(RamDatabase.getStudentById(x.studentId).name,x)).filter((x)=> female.contains(x._2.percentage))zip
+      female.sortBy((scorecard)=>scorecard.percentage).map((x)=>(RamDatabase.getStudentById(x.studentId).name,x)).filter((x)=> marksIntersect.contains(x._2.percentage))
   }
 
   def femalePercentageNotInMales: List[(String, ScoreCard)] = {
